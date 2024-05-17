@@ -75,14 +75,14 @@ const QuizApp = () => {
         <hr />
         {result ? (
           <>
-            <p>
+            <p className="score-result">
               You Scored {score} out of {data.length} {emojiScore(score)}!
             </p>
             <button onClick={handleReplayClick}>Replay</button>
           </>
         ) : (
           <>
-            <p>
+            <p className="questions">
               {index + 1}. {questions.question}
             </p>
             <ul>
