@@ -4,13 +4,13 @@
   width: 600px;
   height: auto;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 10px;
   background-color: white;
   color: black;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  padding: 40px 50px;
+  padding: 30px 50px;
 }
 
 .main h1 {
@@ -88,6 +88,24 @@
   background-color: #e700006e;
 }
 
+.created-by-text {
+  font-family: "Poppins";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.created-by-text a {
+  color: black;
+  margin-left: 5px;
+}
+
+.created-by-text a:hover {
+  color: #009bb6;
+}
+
 @media only screen and (max-width: 767px) {
   .quiz-app {
     width: 200px;
@@ -104,5 +122,12 @@
     font-size: 14px;
     margin-bottom: 20px;
     font-weight: 600;
+  }
+  .created-by-text {
+    font-size: 13px;
+  }
+
+  .created-by-text a {
+    margin-left: 3px;
   }
 }

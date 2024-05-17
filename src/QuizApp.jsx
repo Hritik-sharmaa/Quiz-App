@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { FaGithub } from "react-icons/fa";
 import "./Quiz.css";
 import { data } from "./assets/data.js";
 
@@ -103,6 +104,13 @@ const QuizApp = () => {
             <div className="index">
               {index + 1} of {data.length} Questions.
             </div>
+            <span className="created-by-text">
+              Created by
+              <a href="https://github.com/Hritik-sharmaa" target="_blank">
+                Hritik Sharma{" "}
+              </a>
+              <FaGithub size={19} color="black" />
+            </span>
           </>
         )}
       </div>
