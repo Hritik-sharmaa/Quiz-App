@@ -17,7 +17,7 @@ const QuizApp = () => {
   const optArray = [opt1, opt2, opt3, opt4];
 
   const checkAnswer = (e, ans) => {
-    if (answerLock === false) {
+    if (!answerLock) {
       if (questions.answer === ans) {
         e.target.classList.add("correct");
         setAnswerLock(true);
@@ -30,14 +30,14 @@ const QuizApp = () => {
     }
   };
 
-  let handleNextQuestionClick = () => {
-    if (answerLock === true) {
+  const handleNextQuestionClick = () => {
+    if (answerLock) {
       if (index === data.length - 1) {
         setResult(true);
         return 0;
       }
-      setIndex(++index);
-      setQuestions(data[index]);
+      setIndex(index + 1);
+      setQuestions(data[index + 1]);
       setAnswerLock(false);
       optArray.map((option) => {
         option.current.classList.remove("wrong");
@@ -53,6 +53,21 @@ const QuizApp = () => {
     setResult(false);
     setAnswerLock(false);
   };
+
+  function emojiScore(scr) {
+    if (scr <= 3) {
+      return "😮";
+    } else if (scr <= 5) {
+      return "🙂";
+    } else if (scr <= 8) {
+      return "🥰";
+    } else if (scr <= 10) {
+      return "😎🎉";
+    } else {
+      return "🧠";
+    }
+  }
+
   return (
     <div className="quiz-app">
       <div className="main">
@@ -61,7 +76,7 @@ const QuizApp = () => {
         {result ? (
           <>
             <p>
-              You Scored {score} out of {data.length}!
+              You Scored {score} out of {data.length} {emojiScore(score)}!
             </p>
             <button onClick={handleReplayClick}>Replay</button>
           </>
